@@ -1,0 +1,32 @@
+{
+  "name": "vendor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@fontsource/dm-sans": "^5.2.8",
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/montserrat": "^5.2.8",
+    "@fontsource/playfair-display": "^5.2.8",
+    "@fontsource/poppins": "^5.2.7",
+    "@fortawesome/fontawesome-free": "^7.2.0",
+    "boxicons": "^2.1.4",
+    "datatables.net": "^2.3.7",
+    "datatables.net-buttons": "^3.2.6",
+    "datatables.net-buttons-dt": "^3.2.6",
+    "datatables.net-dt": "^2.3.7",
+    "flatpickr": "^4.6.13",
+    "jszip": "^3.10.1",
+    "lucide": "^1.8.0",
+    "pdfmake": "^0.3.7",
+    "sweetalert2": "^11.26.24",
+    "tom-select": "^2.6.0"
+  }
+}

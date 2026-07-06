@@ -1,0 +1,11 @@
+.git
+.gitignore
+.qodo
+*.md
+README.md
+respaldo_bd.php
+tmp_alter_empleado.php
+node_modules
+.DS_Store
+.env.local
+*.log

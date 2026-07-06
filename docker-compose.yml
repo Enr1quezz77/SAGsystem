@@ -1,0 +1,47 @@
+services:
+  # Servicio PHP/Apache
+  app:
+    build: .
+    container_name: login_register_app
+    ports:
+      - "80:80"
+    environment:
+      - DB_HOST=mysql
+      - DB_USER=root
+      - DB_PASSWORD=root_password
+      - DB_NAME=sis_asistencia
+    volumes:
+      - ./uploads:/var/www/html/uploads
+      - ./img:/var/www/html/img
+    depends_on:
+      - mysql
+    networks:
+      - app-network
+
+  # Servicio MySQL
+  mysql:
+    image: mysql:8.0
+    container_name: login_register_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: sis_asistencia
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./crear_bd_usuario.sql:/docker-entrypoint-initdb.d/crear_bd_usuario.sql
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 5s
+      retries: 5
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mysql_data:
